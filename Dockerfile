@@ -8,10 +8,11 @@ WORKDIR /app
 COPY package*.json ./
 
 # Устанавливаем зависимости
-RUN npm install --production
+RUN yarn install
 
-# Копируем остальной код
 COPY . .
+
+RUN yarn run start
 
 # Запускаем бот
 CMD ["node", "bot.js"]
