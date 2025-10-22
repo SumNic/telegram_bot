@@ -5,18 +5,16 @@ x-common: &common
     - .:/app
     - /app/node_modules
   working_dir: /app
+  env_file:
+    - .env
 
 services:
   telegram-bot1:
     <<: *common
     container_name: job_cloth_test_bot
-    env_file:
-      - .env.job_cloth_test_bot
     command: ["node", "bot1.js"]
 
   telegram-bot2:
     <<: *common
     container_name: rodnaya_partya_bot
-    env_file:
-      - .env.rodnaya_partya_bot
     command: ["node", "bot2.js"]
