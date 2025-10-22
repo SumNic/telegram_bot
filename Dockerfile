@@ -12,7 +12,7 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn run start
+# RUN yarn run start
 
 # Запускаем бот
-CMD ["node", "bot.js"]
+# CMD ["node", "bot.js"]
